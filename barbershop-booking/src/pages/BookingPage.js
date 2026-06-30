@@ -6,7 +6,7 @@ import { format } from 'date-fns';
 import TimeSlot from '../components/TimeSlot';
 
 const SERVICES = [
-  { id: 1, name: 'Clean shave', duration: '30 min', price: 'KSh 200' },
+  { id: 1, name: 'Clean Shave', duration: '30 min', price: 'KSh 200' },
   { id: 2, name: 'Waves', duration: '45 min', price: 'KSh 500' },
   { id: 3, name: 'Shave & Trim', duration: '20 min', price: 'KSh 400' },
 ];
@@ -32,38 +32,47 @@ function BookingPage() {
 
   return (
     <div className="booking-page">
-      <h2>Book Your Appointment</h2>
+      <h2 className="booking-title">Book Your Appointment</h2>
+      <p className="booking-subtitle">Choose your service, date, and time</p>
 
-      {/*Services by Shavia*/}
-      <section>
-        <h3>1. Choose a Service</h3>
-        {SERVICES.map(service => (
-          <div
-            key={service.id}
-            className={`service-card ${selectedService?.id === service.id ? 'selected' : ''}`}
-            onClick={() => setSelectedService(service)}
-          >
-            <strong>{service.name}</strong>
-            <span>{service.duration}</span>
-            <span>{service.price}</span>
-          </div>
-        ))}
-      </section>
+      <div className="booking-step">
+        <div className="booking-step-header">
+          <span className="step-number">1</span>
+          <h3 className="step-label">Choose a Service</h3>
+        </div>
+        <div className="service-options">
+          {SERVICES.map(service => (
+            <div
+              key={service.id}
+              className={`service-option ${selectedService?.id === service.id ? 'selected' : ''}`}
+              onClick={() => setSelectedService(service)}
+            >
+              <div className="service-option-name">{service.name}</div>
+              <div className="service-option-detail">{service.duration}</div>
+              <span className="service-option-price">{service.price}</span>
+            </div>
+          ))}
+        </div>
+      </div>
 
-      {/*  Choose Date */}
-      <section>
-        <h3>2. Choose a Date</h3>
+      <div className="booking-step">
+        <div className="booking-step-header">
+          <span className="step-number">2</span>
+          <h3 className="step-label">Choose a Date</h3>
+        </div>
         <Calendar
           onChange={setSelectedDate}
           value={selectedDate}
           minDate={new Date()}
         />
-        <p>Selected: {format(selectedDate, 'EEEE, MMMM d, yyyy')}</p>
-      </section>
+        <p className="selected-date">Selected: {format(selectedDate, 'EEEE, MMMM d, yyyy')}</p>
+      </div>
 
-      {/* Choose Time */}
-      <section>
-        <h3>3. Choose a Time</h3>
+      <div className="booking-step">
+        <div className="booking-step-header">
+          <span className="step-number">3</span>
+          <h3 className="step-label">Choose a Time</h3>
+        </div>
         <div className="time-slots">
           {TIME_SLOTS.map(slot => (
             <TimeSlot
@@ -74,20 +83,25 @@ function BookingPage() {
             />
           ))}
         </div>
-      </section>
+      </div>
 
-      {/* Your Name */}
-      <section>
-        <h3>4. Your Name</h3>
+      <div className="booking-step">
+        <div className="booking-step-header">
+          <span className="step-number">4</span>
+          <h3 className="step-label">Your Name</h3>
+        </div>
         <input
+          className="name-input"
           type="text"
           placeholder="Enter your name"
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
-      </section>
+      </div>
 
-      <button onClick={handleSubmit}>Confirm booking</button>
+      <button className="booking-submit" onClick={handleSubmit}>
+        Confirm Booking
+      </button>
     </div>
   );
 }

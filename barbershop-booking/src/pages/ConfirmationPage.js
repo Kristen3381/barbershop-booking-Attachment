@@ -15,15 +15,30 @@ function ConfirmationPage() {
   return (
     <div className="confirmation-page">
       <div className="confirmation-card">
-        <h2>Booking Confirmed!</h2>
-        <p>See you soon <strong>{name}</strong>!</p>
-        <div className="booking-details">
-          <p><span>Service:</span> {selectedService.name}</p>
-          <p><span>Date:</span> {format(new Date(selectedDate), 'EEEE, MMMM d, yyyy')}</p>
-          <p><span>Time:</span> {selectedTime}</p>
-          <p><span>Price:</span> {selectedService.price}</p>
+        <div className="confirmation-check">✓</div>
+        <h2 className="confirmation-title">Booking Confirmed!</h2>
+        <p className="confirmation-greeting">See you soon, <strong>{name}</strong>!</p>
+        <div className="confirmation-details">
+          <div className="confirmation-detail-row">
+            <span className="detail-label">Service</span>
+            <span className="detail-value">{selectedService.name}</span>
+          </div>
+          <div className="confirmation-detail-row">
+            <span className="detail-label">Date</span>
+            <span className="detail-value">{format(new Date(selectedDate), 'EEEE, MMMM d, yyyy')}</span>
+          </div>
+          <div className="confirmation-detail-row">
+            <span className="detail-label">Time</span>
+            <span className="detail-value">{selectedTime}</span>
+          </div>
+          <div className="confirmation-detail-row">
+            <span className="detail-label">Price</span>
+            <span className="detail-value">{selectedService.price}</span>
+          </div>
         </div>
-        <button onClick={() => navigate('/')}>Back to Home</button>
+        <button className="confirmation-back-btn" onClick={() => navigate('/')}>
+          Back to Home
+        </button>
       </div>
     </div>
   );
