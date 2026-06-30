@@ -9,17 +9,17 @@
   justify-content: space-between;
   align-items: center;
   padding: 16px 40px;
-  background: rgba(13, 13, 13, 0.85);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px dotted var(--border);
 }
 
 .navbar-logo {
   font-family: var(--font-heading);
   font-size: 24px;
   font-weight: 700;
-  color: var(--gold);
+  color: var(--text-primary);
   letter-spacing: 1px;
 }
 
@@ -46,7 +46,7 @@
   left: 0;
   width: 0;
   height: 1.5px;
-  background: var(--gold);
+  background: var(--text-primary);
   transition: width var(--transition);
 }
 
@@ -59,7 +59,7 @@
 }
 
 .navbar-book-btn {
-  background: var(--gold);
+  background: var(--text-primary);
   color: var(--bg-primary);
   padding: 10px 28px;
   font-size: 13px;
@@ -71,9 +71,9 @@
 }
 
 .navbar-book-btn:hover {
-  background: var(--gold-light);
+  background: var(--accent-light);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(201, 160, 90, 0.25);
+  box-shadow: var(--shadow);
 }
 
 /* ============================================
@@ -87,7 +87,7 @@
   min-height: 90vh;
   padding: 40px 24px;
   text-align: center;
-  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 50%, var(--bg-primary) 100%);
+  background: var(--bg-secondary);
   position: relative;
   overflow: hidden;
 }
@@ -99,8 +99,8 @@
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(ellipse at 30% 20%, rgba(201, 160, 90, 0.07) 0%, transparent 60%),
-              radial-gradient(ellipse at 70% 80%, rgba(201, 160, 90, 0.05) 0%, transparent 60%);
+  background: radial-gradient(ellipse at 30% 20%, rgba(0, 0, 0, 0.03) 0%, transparent 60%),
+              radial-gradient(ellipse at 70% 80%, rgba(0, 0, 0, 0.02) 0%, transparent 60%);
   pointer-events: none;
 }
 
@@ -119,13 +119,14 @@
 }
 
 .hero-title span {
-  color: var(--gold);
   display: block;
+  font-weight: 300;
+  color: var(--text-secondary);
 }
 
 .hero-subtitle {
   font-size: 18px;
-  color: var(--text-secondary);
+  color: var(--text-muted);
   max-width: 520px;
   margin: 0 auto 40px;
   line-height: 1.7;
@@ -133,7 +134,7 @@
 }
 
 .hero-btn {
-  background: var(--gold);
+  background: var(--text-primary);
   color: var(--bg-primary);
   padding: 16px 48px;
   font-size: 15px;
@@ -145,9 +146,9 @@
 }
 
 .hero-btn:hover {
-  background: var(--gold-light);
+  background: var(--accent-light);
   transform: translateY(-3px);
-  box-shadow: 0 12px 32px rgba(201, 160, 90, 0.3);
+  box-shadow: var(--shadow-lg);
 }
 
 /* ============================================
@@ -155,7 +156,7 @@
    ============================================ */
 .services {
   padding: 100px 24px;
-  background: var(--bg-secondary);
+  background: var(--bg-primary);
 }
 
 .services-container {
@@ -173,7 +174,7 @@
 
 .services-subtitle {
   text-align: center;
-  color: var(--text-muted);
+  color: var(--text-dim);
   font-size: 16px;
   margin-bottom: 60px;
   font-weight: 300;
@@ -187,7 +188,7 @@
 
 .service-card {
   background: var(--bg-card);
-  border: 1px solid var(--border);
+  border: 1px dotted var(--border);
   border-radius: var(--radius-lg);
   overflow: hidden;
   transition: all var(--transition);
@@ -195,9 +196,9 @@
 
 .service-card:hover {
   background: var(--bg-card-hover);
-  border-color: var(--border-light);
+  border-color: var(--text-muted);
   transform: translateY(-6px);
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-lg);
 }
 
 .service-card-img {
@@ -206,10 +207,12 @@
   object-fit: cover;
   display: block;
   transition: transform var(--transition);
+  filter: grayscale(30%);
 }
 
 .service-card:hover .service-card-img {
   transform: scale(1.05);
+  filter: grayscale(0%);
 }
 
 .service-card-body {
@@ -227,7 +230,7 @@
 .service-price {
   font-size: 18px;
   font-weight: 600;
-  color: var(--gold);
+  color: var(--text-secondary);
 }
 
 /* ============================================
@@ -248,7 +251,7 @@
 
 .booking-subtitle {
   text-align: center;
-  color: var(--text-muted);
+  color: var(--text-dim);
   font-size: 16px;
   margin-bottom: 48px;
   font-weight: 300;
@@ -287,7 +290,7 @@
 }
 
 .progress-step.done::after {
-  background: var(--gold);
+  background: var(--text-primary);
 }
 
 .progress-circle {
@@ -302,21 +305,23 @@
   position: relative;
   z-index: 1;
   background: var(--bg-card);
-  border: 2px solid var(--border);
-  color: var(--text-muted);
+  border: 2px dotted var(--border);
+  color: var(--text-dim);
   transition: all var(--transition);
 }
 
 .progress-step.active .progress-circle {
-  background: var(--gold);
-  border-color: var(--gold);
+  background: var(--text-primary);
+  border-color: var(--text-primary);
   color: var(--bg-primary);
+  border-style: solid;
 }
 
 .progress-step.done .progress-circle {
-  background: var(--gold);
-  border-color: var(--gold);
+  background: var(--text-primary);
+  border-color: var(--text-primary);
   color: var(--bg-primary);
+  border-style: solid;
 }
 
 .progress-label {
@@ -324,12 +329,13 @@
   text-transform: uppercase;
   letter-spacing: 0.5px;
   font-weight: 600;
-  color: var(--text-muted);
+  color: var(--text-dim);
   transition: color var(--transition);
 }
 
 .progress-step.active .progress-label {
-  color: var(--gold);
+  color: var(--text-primary);
+  font-weight: 700;
 }
 
 .progress-step.done .progress-label {
@@ -342,7 +348,7 @@
 }
 
 .step-panel {
-  animation: fadeInUp 0.35s ease;
+  animation: fadeInUp 0.6s ease-in-out;
 }
 
 .step-panel-header {
@@ -354,6 +360,7 @@
   font-size: 36px;
   display: block;
   margin-bottom: 12px;
+  opacity: 0.6;
 }
 
 .step-panel-title {
@@ -365,7 +372,7 @@
 
 .step-panel-desc {
   font-size: 14px;
-  color: var(--text-muted);
+  color: var(--text-dim);
 }
 
 /* Service cards inside booking */
@@ -377,7 +384,7 @@
 
 .service-option {
   background: var(--bg-card);
-  border: 1px solid var(--border);
+  border: 1px dotted var(--border);
   border-radius: var(--radius-lg);
   overflow: hidden;
   cursor: pointer;
@@ -386,14 +393,16 @@
 
 .service-option:hover {
   background: var(--bg-card-hover);
-  border-color: var(--border-light);
+  border-color: var(--text-muted);
+  border-style: dashed;
   transform: translateY(-3px);
   box-shadow: var(--shadow);
 }
 
 .service-option.selected {
-  border-color: var(--gold);
-  box-shadow: 0 0 0 1.5px var(--gold), var(--shadow);
+  border-color: var(--text-primary);
+  border-style: solid;
+  box-shadow: 0 0 0 1.5px var(--text-primary), var(--shadow);
 }
 
 .service-option-img {
@@ -402,10 +411,12 @@
   object-fit: cover;
   display: block;
   transition: transform var(--transition);
+  filter: grayscale(30%);
 }
 
 .service-option:hover .service-option-img {
   transform: scale(1.05);
+  filter: grayscale(0%);
 }
 
 .service-option-body {
@@ -422,13 +433,13 @@
 
 .service-option-detail {
   font-size: 13px;
-  color: var(--text-muted);
+  color: var(--text-dim);
 }
 
 .service-option-price {
   font-size: 17px;
   font-weight: 700;
-  color: var(--gold);
+  color: var(--text-secondary);
   margin-top: 8px;
   display: block;
 }
@@ -439,7 +450,7 @@
   max-width: 400px !important;
   margin: 0 auto !important;
   background: var(--bg-card) !important;
-  border: 1px solid var(--border) !important;
+  border: 1px dotted var(--border) !important;
   border-radius: var(--radius-lg) !important;
   font-family: var(--font-body) !important;
   padding: 20px !important;
@@ -486,6 +497,7 @@
   border-radius: var(--radius) !important;
   font-size: 14px !important;
   font-weight: 400 !important;
+  transition: background var(--transition) !important;
 }
 
 .react-calendar__tile:enabled:hover {
@@ -493,25 +505,25 @@
 }
 
 .react-calendar__tile--active {
-  background: var(--gold) !important;
+  background: var(--text-primary) !important;
   color: var(--bg-primary) !important;
   font-weight: 700 !important;
 }
 
 .react-calendar__tile--active:enabled:hover {
-  background: var(--gold-light) !important;
+  background: var(--accent-light) !important;
 }
 
 .react-calendar__tile--now {
-  background: rgba(201, 160, 90, 0.15) !important;
+  background: rgba(0, 0, 0, 0.05) !important;
 }
 
 .react-calendar__tile--now:enabled:hover {
-  background: rgba(201, 160, 90, 0.25) !important;
+  background: rgba(0, 0, 0, 0.1) !important;
 }
 
 .react-calendar__month-view__days__day--neighboringMonth {
-  color: var(--text-muted) !important;
+  color: var(--text-dim) !important;
   opacity: 0.3 !important;
 }
 
@@ -522,7 +534,7 @@
 
 .selected-date {
   text-align: center;
-  color: var(--gold);
+  color: var(--text-secondary);
   font-size: 15px;
   font-weight: 500;
   margin-top: 16px;
@@ -539,7 +551,7 @@
 
 .time-slot {
   background: var(--bg-card);
-  border: 1px solid var(--border);
+  border: 1px dotted var(--border);
   border-radius: var(--radius);
   padding: 14px 12px;
   text-align: center;
@@ -552,22 +564,24 @@
 
 .time-slot:hover {
   background: var(--bg-card-hover);
-  border-color: var(--border-light);
+  border-color: var(--text-muted);
+  border-style: dashed;
   transform: translateY(-2px);
 }
 
 .time-slot.selected {
-  border-color: var(--gold);
-  background: rgba(201, 160, 90, 0.08);
-  color: var(--gold);
+  border-color: var(--text-primary);
+  border-style: solid;
+  background: rgba(0, 0, 0, 0.03);
+  color: var(--text-primary);
   font-weight: 600;
-  box-shadow: 0 0 0 1px var(--gold);
+  box-shadow: 0 0 0 1px var(--text-primary);
 }
 
 /* Booking summary (step 4) */
 .booking-summary {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
+  background: var(--bg-secondary);
+  border: 1px dotted var(--border);
   border-radius: var(--radius-lg);
   padding: 24px;
   margin-bottom: 20px;
@@ -581,12 +595,12 @@
 }
 
 .summary-row:not(:last-child) {
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px dotted var(--border);
 }
 
 .summary-label {
   font-size: 14px;
-  color: var(--text-muted);
+  color: var(--text-dim);
 }
 
 .summary-value {
@@ -596,7 +610,7 @@
 }
 
 .summary-price {
-  color: var(--gold);
+  color: var(--text-primary);
   font-weight: 700;
   font-size: 17px;
 }
@@ -606,7 +620,7 @@
   width: 100%;
   padding: 16px 20px;
   background: var(--bg-card);
-  border: 1px solid var(--border);
+  border: 1px dotted var(--border);
   border-radius: var(--radius);
   color: var(--text-primary);
   font-size: 15px;
@@ -614,11 +628,12 @@
 }
 
 .name-input::placeholder {
-  color: var(--text-muted);
+  color: var(--text-dim);
 }
 
 .name-input:focus {
-  border-color: var(--gold);
+  border-color: var(--text-primary);
+  border-style: solid;
 }
 
 /* Booking actions (back/next) */
@@ -640,19 +655,20 @@
   font-size: 14px;
   font-weight: 500;
   letter-spacing: 0.5px;
-  border: 1px solid var(--border);
+  border: 1px dotted var(--border);
   border-radius: var(--radius);
   transition: all var(--transition);
 }
 
 .booking-back:hover {
   border-color: var(--text-muted);
+  border-style: dashed;
   color: var(--text-primary);
 }
 
 .booking-next {
   padding: 14px 40px;
-  background: var(--gold);
+  background: var(--text-primary);
   color: var(--bg-primary);
   font-size: 14px;
   font-weight: 600;
@@ -663,14 +679,14 @@
 }
 
 .booking-next:hover {
-  background: var(--gold-light);
+  background: var(--accent-light);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(201, 160, 90, 0.25);
+  box-shadow: var(--shadow);
 }
 
 .booking-submit {
   padding: 14px 40px;
-  background: var(--gold);
+  background: var(--text-primary);
   color: var(--bg-primary);
   font-size: 14px;
   font-weight: 600;
@@ -681,9 +697,9 @@
 }
 
 .booking-submit:hover {
-  background: var(--gold-light);
+  background: var(--accent-light);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(201, 160, 90, 0.25);
+  box-shadow: var(--shadow);
 }
 
 /* ============================================
@@ -699,25 +715,27 @@
 
 .confirmation-card {
   background: var(--bg-card);
-  border: 1px solid var(--border);
+  border: 1px dotted var(--border);
   border-radius: var(--radius-lg);
   padding: 56px 48px;
   max-width: 480px;
   width: 100%;
   text-align: center;
-  animation: fadeInUp 0.6s ease;
+  animation: fadeInUp 0.6s ease-in-out;
 }
 
 .confirmation-check {
   width: 64px;
   height: 64px;
   border-radius: 50%;
-  background: rgba(201, 160, 90, 0.15);
+  background: rgba(0, 0, 0, 0.05);
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 24px;
   font-size: 28px;
+  color: var(--text-primary);
+  animation: pulse 2s ease-in-out infinite;
 }
 
 .confirmation-title {
@@ -748,11 +766,11 @@
 }
 
 .confirmation-detail-row:not(:last-child) {
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px dotted var(--border);
 }
 
 .detail-label {
-  color: var(--text-muted);
+  color: var(--text-dim);
 }
 
 .detail-value {
@@ -768,14 +786,15 @@
   font-weight: 500;
   letter-spacing: 1px;
   text-transform: uppercase;
-  border: 1px solid var(--border);
+  border: 1px dotted var(--border);
   border-radius: var(--radius);
   transition: all var(--transition);
 }
 
 .confirmation-back-btn:hover {
-  border-color: var(--gold);
-  color: var(--gold);
+  border-color: var(--text-primary);
+  border-style: dashed;
+  color: var(--text-primary);
 }
 
 /* ============================================
@@ -790,6 +809,40 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.3;
+    transform: scale(0.95);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0.3;
+    transform: scale(0.95);
+  }
+}
+
+/* Skeleton loader animation */
+@keyframes shimmer {
+  0% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+
+.skeleton {
+  animation: shimmer 2s ease-in-out infinite;
+  background: var(--bg-elevated);
+  border-radius: var(--radius);
 }
 
 /* ============================================
