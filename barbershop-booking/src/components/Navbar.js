@@ -6,6 +6,7 @@ function Navbar() {
       <Link to="/" className="navbar-logo">Shavia Salon</Link>
       <div className="navbar-links">
         <Link to="/" className="navbar-link">Home</Link>
+        <Link to="/admin" className="navbar-link">Admin</Link>
         <Link to="/book" className="navbar-book-btn">Book Now</Link>
       </div>
     </nav>

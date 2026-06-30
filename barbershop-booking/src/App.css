@@ -877,6 +877,194 @@
 }
 
 /* ============================================
+   ADMIN DASHBOARD
+   ============================================ */
+.admin-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 24px 80px;
+  min-height: calc(100vh - 80px);
+}
+
+.admin-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.admin-title {
+  font-family: var(--font-heading);
+  font-size: 32px;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.admin-subtitle {
+  color: var(--text-dim);
+  font-size: 15px;
+}
+
+.admin-empty {
+  text-align: center;
+  padding: 80px 24px;
+  color: var(--text-dim);
+  background: var(--bg-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+
+.admin-empty-icon {
+  font-size: 48px;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.admin-empty p {
+  font-size: 20px;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+
+.admin-empty-sub {
+  font-size: 13px;
+}
+
+.admin-table-wrap {
+  overflow-x: auto;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: var(--bg-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  font-size: 14px;
+}
+
+.admin-table th {
+  background: rgba(196, 163, 90, 0.12);
+  color: var(--brass);
+  font-weight: 600;
+  text-align: left;
+  padding: 16px 14px;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--border);
+}
+
+.admin-table td {
+  padding: 14px;
+  color: var(--text-primary);
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.admin-table tr:last-child td {
+  border-bottom: none;
+}
+
+.admin-table tr:hover td {
+  background: rgba(255,255,255,0.02);
+}
+
+.admin-cell-name {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.admin-cell-price {
+  color: var(--brass);
+  font-weight: 600;
+}
+
+.admin-select {
+  background: rgba(255,255,255,0.06);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 13px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color var(--transition);
+  min-width: 130px;
+}
+
+.admin-select:focus {
+  outline: none;
+  border-color: var(--brass);
+}
+
+.admin-select-sm {
+  min-width: 0;
+  width: 100px;
+  padding: 6px 8px;
+  font-size: 12px;
+}
+
+.admin-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.admin-badge-pending {
+  background: rgba(255, 193, 7, 0.15);
+  color: #ffc107;
+}
+
+.admin-badge-confirmed {
+  background: rgba(40, 167, 69, 0.15);
+  color: #28a745;
+}
+
+.admin-badge-completed {
+  background: rgba(196, 163, 90, 0.15);
+  color: var(--brass);
+}
+
+.admin-badge-cancelled {
+  background: rgba(220, 53, 69, 0.15);
+  color: #dc3545;
+}
+
+.admin-cell-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.admin-delete-btn {
+  background: rgba(220, 53, 69, 0.1);
+  border: 1px solid rgba(220, 53, 69, 0.25);
+  color: #dc3545;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  font-size: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition);
+}
+
+.admin-delete-btn:hover {
+  background: rgba(220, 53, 69, 0.25);
+  border-color: #dc3545;
+}
+
+/* ============================================
    RESPONSIVE
    ============================================ */
 @media (max-width: 640px) {
@@ -943,5 +1131,35 @@
   .booking-submit {
     width: 100%;
     text-align: center;
+  }
+
+  .admin-page {
+    padding: 24px 16px 60px;
+  }
+
+  .admin-title {
+    font-size: 24px;
+  }
+
+  .admin-table th,
+  .admin-table td {
+    padding: 10px 8px;
+    font-size: 12px;
+  }
+
+  .admin-select {
+    font-size: 12px;
+    padding: 6px 8px;
+    min-width: 0;
+  }
+
+  .admin-cell-actions {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .admin-delete-btn {
+    width: 26px;
+    height: 26px;
   }
 }
