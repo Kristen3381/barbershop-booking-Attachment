@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { format } from 'date-fns';
 
@@ -6,29 +5,8 @@ function ConfirmationPage() {
   const { state } = useLocation();
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (!state) {
-      navigate('/');
-      return;
-    }
-    const { name, selectedService, selectedDate, selectedTime } = state;
-    const booking = {
-      id: Date.now(),
-      name,
-      service: selectedService.name,
-      date: selectedDate,
-      time: selectedTime,
-      price: selectedService.price,
-      status: 'confirmed',
-      assignedTo: null,
-      createdAt: new Date().toISOString(),
-    };
-    const existing = JSON.parse(localStorage.getItem('shaviaBookings') || '[]');
-    existing.push(booking);
-    localStorage.setItem('shaviaBookings', JSON.stringify(existing));
-  }, [state, navigate]);
-
   if (!state) {
+    navigate('/');
     return null;
   }
 

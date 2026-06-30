@@ -460,6 +460,24 @@
   color: var(--text-dim);
 }
 
+.service-option-img-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  background: var(--bg-glass);
+}
+
+.custom-service-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .service-option-price {
   font-size: 17px;
   font-weight: 700;
@@ -887,7 +905,9 @@
 }
 
 .admin-header {
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
   margin-bottom: 40px;
 }
 
@@ -1064,6 +1084,569 @@
   border-color: #dc3545;
 }
 
+.admin-toggle-btn {
+  background: rgba(255, 193, 7, 0.1);
+  border: 1px solid rgba(255, 193, 7, 0.25);
+  color: #ffc107;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition);
+  font-family: inherit;
+}
+
+.admin-toggle-btn:hover {
+  background: rgba(255, 193, 7, 0.25);
+}
+
+.admin-toggle-btn.off {
+  background: rgba(40, 167, 69, 0.1);
+  border-color: rgba(40, 167, 69, 0.25);
+  color: #28a745;
+}
+
+.admin-toggle-btn.off:hover {
+  background: rgba(40, 167, 69, 0.25);
+}
+
+.admin-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 32px;
+  justify-content: center;
+}
+
+.admin-tab {
+  background: var(--bg-glass);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  padding: 10px 28px;
+  border-radius: var(--radius);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition);
+  font-family: inherit;
+}
+
+.admin-tab:hover {
+  border-color: var(--brass);
+  color: var(--brass);
+}
+
+.admin-tab.active {
+  background: var(--brass);
+  color: var(--bg-primary);
+  border-color: var(--brass);
+}
+
+.admin-staff-section {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.admin-staff-form {
+  background: var(--bg-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  margin-bottom: 32px;
+}
+
+.admin-staff-form-title {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+
+.admin-staff-form-row {
+  display: flex;
+  gap: 12px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.admin-staff-form-row .login-input {
+  flex: 1;
+  min-width: 160px;
+  margin: 0;
+}
+
+.admin-staff-form-row .login-btn {
+  margin: 0;
+  white-space: nowrap;
+}
+
+.admin-staff-msg {
+  margin-top: 12px;
+  font-size: 13px;
+  color: var(--brass);
+}
+
+.admin-stats {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.stats-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.stat-card {
+  background: var(--bg-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  text-align: center;
+}
+
+.stat-value {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 28px;
+  color: var(--brass);
+  margin-bottom: 4px;
+}
+
+.stat-label {
+  display: block;
+  font-size: 12px;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.admin-stats-title {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+
+.admin-cell-rank {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--brass);
+  text-align: center;
+}
+
+/* ============================================
+   LOGIN PAGES
+   ============================================ */
+.login-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 80px);
+  padding: 40px 24px;
+}
+
+.login-card {
+  background: var(--bg-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 48px 40px;
+  width: 100%;
+  max-width: 380px;
+  text-align: center;
+}
+
+.login-title {
+  font-family: var(--font-heading);
+  font-size: 26px;
+  color: var(--text-primary);
+  margin-bottom: 28px;
+}
+
+.login-input {
+  width: 100%;
+  padding: 14px 16px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text-primary);
+  font-size: 14px;
+  font-family: inherit;
+  transition: border-color var(--transition);
+  margin-bottom: 14px;
+  box-sizing: border-box;
+}
+
+.login-input:focus {
+  outline: none;
+  border-color: var(--brass);
+}
+
+.login-input::placeholder {
+  color: var(--text-dim);
+}
+
+.login-error {
+  color: #dc3545;
+  font-size: 13px;
+  margin-bottom: 14px;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 14px;
+  background: var(--brass);
+  color: var(--bg-primary);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all var(--transition);
+  font-family: inherit;
+  margin-top: 4px;
+}
+
+.login-btn:hover {
+  background: var(--brass-light);
+  box-shadow: 0 8px 24px rgba(196, 163, 90, 0.25);
+}
+
+.login-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.login-btn:disabled:hover {
+  background: var(--brass);
+  box-shadow: none;
+}
+
+/* ============================================
+   EMPLOYEE DASHBOARD
+   ============================================ */
+.emp-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 24px 80px;
+  min-height: calc(100vh - 80px);
+}
+
+.emp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 40px;
+}
+
+.emp-title {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.emp-subtitle {
+  color: var(--text-dim);
+  font-size: 14px;
+}
+
+.emp-logout-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  padding: 8px 20px;
+  border-radius: var(--radius);
+  font-size: 13px;
+  cursor: pointer;
+  transition: all var(--transition);
+  font-family: inherit;
+}
+
+.emp-logout-btn:hover {
+  border-color: var(--brass);
+  color: var(--brass);
+}
+
+.emp-section-title {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+
+.emp-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.emp-card {
+  background: var(--bg-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  transition: all var(--transition);
+}
+
+.emp-card:hover {
+  border-color: rgba(255,255,255,0.1);
+}
+
+.emp-card-done {
+  opacity: 0.5;
+}
+
+.emp-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.emp-card-name {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 15px;
+}
+
+.emp-card-service {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.emp-card-time {
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+.emp-card-price {
+  font-size: 13px;
+  color: var(--brass);
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+.emp-done-btn {
+  background: rgba(40, 167, 69, 0.1);
+  border: 1px solid rgba(40, 167, 69, 0.25);
+  color: #28a745;
+  padding: 10px 20px;
+  border-radius: var(--radius);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition);
+  font-family: inherit;
+  white-space: nowrap;
+}
+
+.emp-done-btn:hover {
+  background: rgba(40, 167, 69, 0.25);
+  box-shadow: 0 4px 16px rgba(40, 167, 69, 0.2);
+}
+
+.emp-done-badge {
+  background: rgba(40, 167, 69, 0.15);
+  color: #28a745;
+  padding: 8px 16px;
+  border-radius: var(--radius);
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* ============================================
+   BARBER SELECTION
+   ============================================ */
+.barber-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 12px;
+}
+
+.barber-option {
+  background: var(--bg-glass);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.barber-option:hover {
+  border-color: var(--brass);
+  transform: translateY(-2px);
+}
+
+.barber-option.selected {
+  border-color: var(--brass);
+  background: rgba(196, 163, 90, 0.1);
+  box-shadow: 0 0 0 1px var(--brass);
+}
+
+.barber-option.barber-unavailable {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.barber-option-avatar {
+  font-size: 36px;
+  margin-bottom: 8px;
+}
+
+.barber-option-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.barber-option-detail {
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+.booking-error {
+  color: #dc3545;
+  font-size: 13px;
+  margin-top: 12px;
+  text-align: center;
+}
+
+/* ============================================
+   RATING POPUP
+   ============================================ */
+.rating-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 24px;
+}
+
+.rating-card {
+  background: var(--bg-glass);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 48px 40px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+  animation: fadeInUp 0.5s ease-in-out;
+}
+
+.rating-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  color: var(--text-dim);
+  font-size: 20px;
+  cursor: pointer;
+  transition: color var(--transition);
+}
+
+.rating-close:hover {
+  color: var(--text-primary);
+}
+
+.rating-title {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.rating-subtitle {
+  color: var(--text-secondary);
+  font-size: 14px;
+  margin-bottom: 28px;
+}
+
+.rating-stars {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 28px;
+}
+
+.rating-star {
+  background: none;
+  border: none;
+  font-size: 36px;
+  color: rgba(255,255,255,0.15);
+  cursor: pointer;
+  transition: all var(--transition);
+  padding: 4px;
+}
+
+.rating-star.active {
+  color: var(--brass);
+  text-shadow: 0 0 12px rgba(196, 163, 90, 0.4);
+}
+
+.rating-star:hover {
+  transform: scale(1.2);
+  color: var(--brass);
+}
+
+.rating-submit-btn {
+  width: 100%;
+  padding: 14px;
+  background: var(--brass);
+  color: var(--bg-primary);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all var(--transition);
+  font-family: inherit;
+}
+
+.rating-submit-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.rating-submit-btn:not(:disabled):hover {
+  background: var(--brass-light);
+  box-shadow: 0 8px 24px rgba(196, 163, 90, 0.25);
+}
+
 /* ============================================
    RESPONSIVE
    ============================================ */
@@ -1161,5 +1744,62 @@
   .admin-delete-btn {
     width: 26px;
     height: 26px;
+  }
+
+  .admin-header {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+
+  .admin-tabs {
+    gap: 4px;
+  }
+
+  .admin-tab {
+    padding: 8px 14px;
+    font-size: 12px;
+  }
+
+  .admin-staff-form-row {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .admin-staff-form-row .login-input {
+    min-width: 0;
+    margin: 0;
+  }
+
+  .login-card {
+    padding: 32px 24px;
+  }
+
+  .emp-header {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .emp-card {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .emp-done-btn,
+  .emp-done-badge {
+    text-align: center;
+  }
+
+  .barber-options {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .rating-card {
+    padding: 32px 24px;
+  }
+
+  .rating-star {
+    font-size: 28px;
   }
 }
