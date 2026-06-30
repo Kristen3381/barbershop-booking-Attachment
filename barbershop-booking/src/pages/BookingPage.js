@@ -111,7 +111,7 @@ function BookingPage() {
               value={selectedDate}
               minDate={new Date()}
             />
-            <p className="selected-date">{format(selectedDate, 'EEEE, MMMM d, yyyy')}</p>
+            <p className="selected-date">{format(selectedDate, 'EEEE, do MMMM yyyy')}</p>
           </div>
         )}
 
@@ -149,7 +149,7 @@ function BookingPage() {
               </div>
               <div className="summary-row">
                 <span className="summary-label">Date</span>
-                <span className="summary-value">{format(selectedDate, 'MMM d, yyyy')}</span>
+                <span className="summary-value">{format(selectedDate, 'do MMMM yyyy')}</span>
               </div>
               <div className="summary-row">
                 <span className="summary-label">Time</span>

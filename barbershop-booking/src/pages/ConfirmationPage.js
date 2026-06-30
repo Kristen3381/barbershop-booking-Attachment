@@ -25,7 +25,7 @@ function ConfirmationPage() {
           </div>
           <div className="confirmation-detail-row">
             <span className="detail-label">Date</span>
-            <span className="detail-value">{format(new Date(selectedDate), 'EEEE, MMMM d, yyyy')}</span>
+            <span className="detail-value">{format(new Date(selectedDate), 'EEEE, do MMMM yyyy')}</span>
           </div>
           <div className="confirmation-detail-row">
             <span className="detail-label">Time</span>

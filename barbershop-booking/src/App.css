@@ -1,4 +1,14 @@
 /* ============================================
+   GLASS UTILITY
+   ============================================ */
+.glass {
+  background: var(--bg-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+}
+
+/* ============================================
    NAVBAR
    ============================================ */
 .navbar {
@@ -9,10 +19,10 @@
   justify-content: space-between;
   align-items: center;
   padding: 16px 40px;
-  background: rgba(248, 244, 237, 0.9);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px dotted var(--border);
+  background: rgba(13, 10, 8, 0.8);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid var(--border);
 }
 
 .navbar-logo {
@@ -46,12 +56,12 @@
   left: 0;
   width: 0;
   height: 1.5px;
-  background: var(--accent);
+  background: var(--brass);
   transition: width var(--transition);
 }
 
 .navbar-link:hover {
-  color: var(--accent);
+  color: var(--brass);
 }
 
 .navbar-link:hover::after {
@@ -59,7 +69,7 @@
 }
 
 .navbar-book-btn {
-  background: var(--accent);
+  background: var(--brass);
   color: var(--bg-primary);
   padding: 10px 28px;
   font-size: 13px;
@@ -71,9 +81,9 @@
 }
 
 .navbar-book-btn:hover {
-  background: var(--accent-light);
+  background: var(--brass-light);
   transform: translateY(-2px);
-  box-shadow: var(--shadow);
+  box-shadow: 0 8px 24px rgba(196, 163, 90, 0.25);
 }
 
 /* ============================================
@@ -84,10 +94,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 90vh;
+  min-height: 100vh;
   padding: 40px 24px;
   text-align: center;
-  background: var(--bg-secondary);
   position: relative;
   overflow: hidden;
 }
@@ -95,13 +104,24 @@
 .hero::before {
   content: '';
   position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(rgba(13, 10, 8, 0.6), rgba(13, 10, 8, 0.85)),
+    url('https://images.unsplash.com/photo-1585747861115-bb16f22e9e5a?w=1600&h=900&fit=crop&auto=format') center / cover no-repeat;
+  z-index: 0;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
   top: -50%;
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(ellipse at 30% 20%, rgba(196, 163, 90, 0.06) 0%, transparent 60%),
-              radial-gradient(ellipse at 70% 80%, rgba(196, 163, 90, 0.04) 0%, transparent 60%);
+  background: radial-gradient(ellipse at 30% 20%, rgba(196, 163, 90, 0.08) 0%, transparent 60%),
+              radial-gradient(ellipse at 70% 80%, rgba(196, 163, 90, 0.05) 0%, transparent 60%);
   pointer-events: none;
+  z-index: 0;
 }
 
 .hero-content {
@@ -116,6 +136,7 @@
   color: var(--text-primary);
   line-height: 1.1;
   margin-bottom: 20px;
+  text-shadow: 0 2px 32px rgba(0, 0, 0, 0.5);
 }
 
 .hero-title span {
@@ -127,7 +148,7 @@
 
 .hero-subtitle {
   font-size: 18px;
-  color: var(--text-muted);
+  color: var(--text-secondary);
   max-width: 520px;
   margin: 0 auto 40px;
   line-height: 1.7;
@@ -135,7 +156,7 @@
 }
 
 .hero-btn {
-  background: var(--accent);
+  background: var(--brass);
   color: var(--bg-primary);
   padding: 16px 48px;
   font-size: 15px;
@@ -147,9 +168,9 @@
 }
 
 .hero-btn:hover {
-  background: var(--accent-light);
+  background: var(--brass-light);
   transform: translateY(-3px);
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 12px 32px rgba(196, 163, 90, 0.3);
 }
 
 /* ============================================
@@ -188,17 +209,18 @@
 }
 
 .service-card {
-  background: var(--bg-card);
-  border: 1px dotted var(--border);
+  background: var(--bg-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   overflow: hidden;
   transition: all var(--transition);
 }
 
 .service-card:hover {
-  background: var(--bg-card-hover);
+  background: var(--bg-glass-hover);
   border-color: var(--brass);
-  border-style: dashed;
   transform: translateY(-6px);
   box-shadow: var(--shadow-lg);
 }
@@ -209,12 +231,12 @@
   object-fit: cover;
   display: block;
   transition: transform var(--transition), filter var(--transition);
-  filter: grayscale(30%);
+  filter: grayscale(40%) brightness(0.8);
 }
 
 .service-card:hover .service-card-img {
   transform: scale(1.05);
-  filter: grayscale(0%);
+  filter: grayscale(0%) brightness(1);
 }
 
 .service-card-body {
@@ -292,7 +314,7 @@
 }
 
 .progress-step.done::after {
-  background: var(--accent);
+  background: var(--brass);
 }
 
 .progress-circle {
@@ -306,24 +328,24 @@
   font-weight: 700;
   position: relative;
   z-index: 1;
-  background: var(--bg-card);
-  border: 2px dotted var(--border);
+  background: var(--bg-glass-strong);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--border);
   color: var(--text-dim);
   transition: all var(--transition);
 }
 
 .progress-step.active .progress-circle {
-  background: var(--accent);
-  border-color: var(--accent);
+  background: var(--brass);
+  border-color: var(--brass);
   color: var(--bg-primary);
-  border-style: solid;
 }
 
 .progress-step.done .progress-circle {
-  background: var(--accent);
-  border-color: var(--accent);
+  background: var(--brass);
+  border-color: var(--brass);
   color: var(--bg-primary);
-  border-style: solid;
 }
 
 .progress-label {
@@ -336,7 +358,7 @@
 }
 
 .progress-step.active .progress-label {
-  color: var(--accent);
+  color: var(--brass);
   font-weight: 700;
 }
 
@@ -362,7 +384,7 @@
   font-size: 36px;
   display: block;
   margin-bottom: 12px;
-  opacity: 0.6;
+  opacity: 0.8;
 }
 
 .step-panel-title {
@@ -385,8 +407,10 @@
 }
 
 .service-option {
-  background: var(--bg-card);
-  border: 1px dotted var(--border);
+  background: var(--bg-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   overflow: hidden;
   cursor: pointer;
@@ -394,16 +418,14 @@
 }
 
 .service-option:hover {
-  background: var(--bg-card-hover);
+  background: var(--bg-glass-hover);
   border-color: var(--brass);
-  border-style: dashed;
   transform: translateY(-3px);
   box-shadow: var(--shadow);
 }
 
 .service-option.selected {
   border-color: var(--brass);
-  border-style: solid;
   box-shadow: 0 0 0 1.5px var(--brass), var(--shadow);
 }
 
@@ -413,12 +435,12 @@
   object-fit: cover;
   display: block;
   transition: transform var(--transition), filter var(--transition);
-  filter: grayscale(30%);
+  filter: grayscale(40%) brightness(0.8);
 }
 
 .service-option:hover .service-option-img {
   transform: scale(1.05);
-  filter: grayscale(0%);
+  filter: grayscale(0%) brightness(1);
 }
 
 .service-option-body {
@@ -451,8 +473,10 @@
   width: 100% !important;
   max-width: 400px !important;
   margin: 0 auto !important;
-  background: var(--bg-card) !important;
-  border: 1px dotted var(--border) !important;
+  background: var(--bg-glass) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border: 1px solid var(--border) !important;
   border-radius: var(--radius-lg) !important;
   font-family: var(--font-body) !important;
   padding: 20px !important;
@@ -472,7 +496,7 @@
 
 .react-calendar__navigation button:enabled:hover,
 .react-calendar__navigation button:enabled:focus {
-  background: var(--bg-card-hover) !important;
+  background: var(--bg-glass-hover) !important;
   border-radius: var(--radius) !important;
 }
 
@@ -503,25 +527,25 @@
 }
 
 .react-calendar__tile:enabled:hover {
-  background: var(--bg-card-hover) !important;
+  background: var(--bg-glass-hover) !important;
 }
 
 .react-calendar__tile--active {
-  background: var(--accent) !important;
+  background: var(--brass) !important;
   color: var(--bg-primary) !important;
   font-weight: 700 !important;
 }
 
 .react-calendar__tile--active:enabled:hover {
-  background: var(--accent-light) !important;
+  background: var(--brass-light) !important;
 }
 
 .react-calendar__tile--now {
-  background: rgba(196, 163, 90, 0.1) !important;
+  background: rgba(196, 163, 90, 0.15) !important;
 }
 
 .react-calendar__tile--now:enabled:hover {
-  background: rgba(196, 163, 90, 0.2) !important;
+  background: rgba(196, 163, 90, 0.25) !important;
 }
 
 .react-calendar__month-view__days__day--neighboringMonth {
@@ -552,8 +576,10 @@
 }
 
 .time-slot {
-  background: var(--bg-card);
-  border: 1px dotted var(--border);
+  background: var(--bg-glass);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 14px 12px;
   text-align: center;
@@ -565,25 +591,24 @@
 }
 
 .time-slot:hover {
-  background: var(--bg-card-hover);
+  background: var(--bg-glass-hover);
   border-color: var(--brass);
-  border-style: dashed;
   transform: translateY(-2px);
 }
 
 .time-slot.selected {
   border-color: var(--brass);
-  border-style: solid;
-  background: rgba(196, 163, 90, 0.06);
+  background: rgba(196, 163, 90, 0.1);
   color: var(--brass);
   font-weight: 600;
-  box-shadow: 0 0 0 1px var(--brass);
 }
 
 /* Booking summary (step 4) */
 .booking-summary {
-  background: var(--bg-secondary);
-  border: 1px dotted var(--border);
+  background: var(--bg-glass-strong);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 24px;
   margin-bottom: 20px;
@@ -597,7 +622,7 @@
 }
 
 .summary-row:not(:last-child) {
-  border-bottom: 1px dotted var(--border);
+  border-bottom: 1px solid var(--border);
 }
 
 .summary-label {
@@ -621,8 +646,10 @@
 .name-input {
   width: 100%;
   padding: 16px 20px;
-  background: var(--bg-card);
-  border: 1px dotted var(--border);
+  background: var(--bg-glass);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--border);
   border-radius: var(--radius);
   color: var(--text-primary);
   font-size: 15px;
@@ -635,7 +662,6 @@
 
 .name-input:focus {
   border-color: var(--brass);
-  border-style: solid;
 }
 
 /* Booking actions (back/next) */
@@ -657,20 +683,19 @@
   font-size: 14px;
   font-weight: 500;
   letter-spacing: 0.5px;
-  border: 1px dotted var(--border);
+  border: 1px solid var(--border);
   border-radius: var(--radius);
   transition: all var(--transition);
 }
 
 .booking-back:hover {
   border-color: var(--brass);
-  border-style: dashed;
   color: var(--brass);
 }
 
 .booking-next {
   padding: 14px 40px;
-  background: var(--accent);
+  background: var(--brass);
   color: var(--bg-primary);
   font-size: 14px;
   font-weight: 600;
@@ -681,14 +706,14 @@
 }
 
 .booking-next:hover {
-  background: var(--accent-light);
+  background: var(--brass-light);
   transform: translateY(-2px);
-  box-shadow: var(--shadow);
+  box-shadow: 0 8px 24px rgba(196, 163, 90, 0.25);
 }
 
 .booking-submit {
   padding: 14px 40px;
-  background: var(--accent);
+  background: var(--brass);
   color: var(--bg-primary);
   font-size: 14px;
   font-weight: 600;
@@ -699,9 +724,9 @@
 }
 
 .booking-submit:hover {
-  background: var(--accent-light);
+  background: var(--brass-light);
   transform: translateY(-2px);
-  box-shadow: var(--shadow);
+  box-shadow: 0 8px 24px rgba(196, 163, 90, 0.25);
 }
 
 /* ============================================
@@ -716,8 +741,10 @@
 }
 
 .confirmation-card {
-  background: var(--bg-card);
-  border: 1px dotted var(--border);
+  background: var(--bg-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 56px 48px;
   max-width: 480px;
@@ -730,7 +757,9 @@
   width: 64px;
   height: 64px;
   border-radius: 50%;
-  background: rgba(196, 163, 90, 0.12);
+  background: rgba(196, 163, 90, 0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -754,7 +783,9 @@
 }
 
 .confirmation-details {
-  background: var(--bg-secondary);
+  background: var(--bg-glass-strong);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border-radius: var(--radius);
   padding: 24px;
   margin-bottom: 32px;
@@ -768,7 +799,7 @@
 }
 
 .confirmation-detail-row:not(:last-child) {
-  border-bottom: 1px dotted var(--border);
+  border-bottom: 1px solid var(--border);
 }
 
 .detail-label {
@@ -788,14 +819,13 @@
   font-weight: 500;
   letter-spacing: 1px;
   text-transform: uppercase;
-  border: 1px dotted var(--border);
+  border: 1px solid var(--border);
   border-radius: var(--radius);
   transition: all var(--transition);
 }
 
 .confirmation-back-btn:hover {
   border-color: var(--brass);
-  border-style: dashed;
   color: var(--brass);
 }
 
@@ -842,7 +872,7 @@
 
 .skeleton {
   animation: shimmer 2s ease-in-out infinite;
-  background: var(--bg-elevated);
+  background: var(--bg-glass-strong);
   border-radius: var(--radius);
 }
 
@@ -864,7 +894,7 @@
   }
 
   .hero {
-    min-height: 80vh;
+    min-height: 90vh;
     padding: 60px 20px;
   }
 
