@@ -73,7 +73,7 @@
 .navbar-book-btn:hover {
   background: var(--gold-light);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(200, 169, 110, 0.25);
+  box-shadow: 0 8px 24px rgba(201, 160, 90, 0.25);
 }
 
 /* ============================================
@@ -99,8 +99,8 @@
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(ellipse at 30% 20%, rgba(200, 169, 110, 0.06) 0%, transparent 60%),
-              radial-gradient(ellipse at 70% 80%, rgba(200, 169, 110, 0.04) 0%, transparent 60%);
+  background: radial-gradient(ellipse at 30% 20%, rgba(201, 160, 90, 0.07) 0%, transparent 60%),
+              radial-gradient(ellipse at 70% 80%, rgba(201, 160, 90, 0.05) 0%, transparent 60%);
   pointer-events: none;
 }
 
@@ -147,7 +147,7 @@
 .hero-btn:hover {
   background: var(--gold-light);
   transform: translateY(-3px);
-  box-shadow: 0 12px 32px rgba(200, 169, 110, 0.3);
+  box-shadow: 0 12px 32px rgba(201, 160, 90, 0.3);
 }
 
 /* ============================================
@@ -189,24 +189,8 @@
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  padding: 40px 32px;
-  text-align: center;
-  transition: all var(--transition);
-  position: relative;
   overflow: hidden;
-}
-
-.service-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: var(--gold);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform var(--transition);
+  transition: all var(--transition);
 }
 
 .service-card:hover {
@@ -216,21 +200,28 @@
   box-shadow: var(--shadow);
 }
 
-.service-card:hover::before {
-  transform: scaleX(1);
+.service-card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--transition);
 }
 
-.service-icon {
-  font-size: 48px;
-  margin-bottom: 20px;
-  display: block;
+.service-card:hover .service-card-img {
+  transform: scale(1.05);
+}
+
+.service-card-body {
+  padding: 28px 24px 32px;
+  text-align: center;
 }
 
 .service-name {
   font-family: var(--font-heading);
   font-size: 20px;
   color: var(--text-primary);
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .service-price {
@@ -319,7 +310,7 @@
 
 .service-option.selected {
   border-color: var(--gold);
-  background: rgba(200, 169, 110, 0.08);
+  background: rgba(201, 160, 90, 0.08);
   box-shadow: 0 0 0 1px var(--gold);
 }
 
@@ -392,7 +383,7 @@
 }
 
 .react-calendar__tile--now {
-  background: rgba(200, 169, 110, 0.15) !important;
+  background: rgba(201, 160, 90, 0.15) !important;
 }
 
 .react-calendar__month-view__days__day--neighboringMonth {
@@ -439,7 +430,7 @@
 
 .time-slot.selected {
   border-color: var(--gold);
-  background: rgba(200, 169, 110, 0.08);
+  background: rgba(201, 160, 90, 0.08);
   color: var(--gold);
   font-weight: 600;
   box-shadow: 0 0 0 1px var(--gold);
@@ -483,7 +474,7 @@
 .booking-submit:hover {
   background: var(--gold-light);
   transform: translateY(-2px);
-  box-shadow: 0 12px 32px rgba(200, 169, 110, 0.25);
+  box-shadow: 0 12px 32px rgba(201, 160, 90, 0.25);
 }
 
 /* ============================================
@@ -512,7 +503,7 @@
   width: 64px;
   height: 64px;
   border-radius: 50%;
-  background: rgba(200, 169, 110, 0.15);
+  background: rgba(201, 160, 90, 0.15);
   display: flex;
   align-items: center;
   justify-content: center;
